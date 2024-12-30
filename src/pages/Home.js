@@ -1,28 +1,51 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../index.js'; // Certifique-se de que o caminho está correto
+import { useNavigate } from 'react-router-dom';
+
 
 const Home = () => {
+  
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    auth.signOut().then(() => {
+      navigate('/sign-in'); // Redireciona para a página de login após o logout
+    });
+  };
+
   return (
     <div className="h-screen w-full bg-gray-200">
-      {/* Header */}
+    {/* Header */}
       <div className="flex w-full h-[45px] p-[8px] px-[20px] py-[9px] border-b border-[#E5E7EB] bg-white opacity-100">
         <h1 className="text-[18px] font-normal leading-[28px] text-left text-[#0EA5E9]">
           Aluritter
         </h1>
 
         <div className="flex items-center absolute right-[20px] top-[8px] gap-0">
-          <p className="w-[205px] h-[20px] mt-[3.5px] mr-[10px] font-['Roboto'] text-[14px] font-normal leading-[20px] text-right text-gray-500">
-            cfernando_21@hotmail.com
-          </p>
+          {user ? (
+            <>
+              <p className="w-[205px] h-[20px] mt-[3.5px] mr-[10px] font-['Roboto'] text-[14px] font-normal leading-[20px] text-right text-gray-500">
+                {user.email}
+              </p>
 
-          <button className="w-[39.24px] h-[28px] p-[3.5px] px-[8.24px] rounded-[4px] bg-[#EF4444] flex items-center justify-center">
-            <span className="text-[14px] font-normal leading-[20px] text-white">
-              Sair
-            </span>
-          </button>
+              <button onClick={handleSignOut}
+                className="w-[39.24px] h-[28px] p-[3.5px] px-[8.24px] rounded-[4px] bg-[#EF4444] flex items-center justify-center">
+                <span className="text-[14px] font-normal leading-[20px] text-white">
+                  Sair
+                </span>
+              </button>
+            </>
+          ) : (
+            <p className="w-[205px] h-[20px] mt-[3.5px] mr-[10px] font-['Roboto'] text-[14px] font-normal leading-[20px] text-right text-gray-500">
+              Não autenticado
+            </p>
+          )}
         </div>
       </div>
 
-      {/* Form container */}
+        {/* Form container */}
       <div className="flex justify-center items-start w-full mt-12">
         <div className="form w-[1200px] h-[196px] flex flex-col justify-center items-start">
           <p className="ml-2 mb-1 w-[170.56px] font-['Roboto'] text-[14px] font-normal leading-[20px] text-left text-[#4B5563] underline-offset-from-font">
