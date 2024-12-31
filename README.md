@@ -1,7 +1,6 @@
-
 # Clone do Twitter
 
-Este projeto é um clone do Twitter desenvolvido como parte do desafio #7DaysOfCode.
+Este projeto é um clone do Twitter desenvolvido como parte do desafio #7DaysOfCode. Ele permite que os usuários façam login, postem mensagens e visualizem mensagens postadas por outros usuários em tempo real.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -10,6 +9,9 @@ Este projeto é um clone do Twitter desenvolvido como parte do desafio #7DaysOfC
 - [React Router](https://reactrouter.com/) - Roteamento para aplicações React
 - [Tailwind CSS](https://tailwindcss.com/) - Framework CSS para estilização
 - [Node.js](https://nodejs.org/) - Ambiente de execução JavaScript
+- [Firebase Hosting](https://firebase.google.com/products/hosting) - Hospedagem do projeto
+- [Firebase Realtime Database](https://firebase.google.com/products/realtime-database) - Banco de dados em tempo real
+- [Firebase Authentication](https://firebase.google.com/products/auth) - Autenticação de usuários
 
 ## 📋 Pré-requisitos
 
@@ -65,6 +67,12 @@ twitter/
 - Página inicial responsiva
 - Navegação entre páginas
 - Página 404 para rotas não encontradas
+- Autenticação de usuários
+- Postagem de mensagens em tempo real
+
+## 🌐 Hospedagem
+
+O projeto está hospedado no Firebase Hosting e pode ser acessado através do seguinte link: [https://twitter-react-c15b9.firebaseapp.com/](https://twitter-react-c15b9.firebaseapp.com/)
 
 ## 📝 Licença
 

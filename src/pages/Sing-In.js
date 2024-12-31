@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'; // Importa o hook useSignInWithEmailAndPassword do pacote react-firebase-hooks/auth
 import { auth } from '../index.js'; // Certifique-se de que o caminho está correto
 import { Link, useNavigate } from 'react-router-dom';
 

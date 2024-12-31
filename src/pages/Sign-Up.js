@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../index.js'; // Certifique-se de que o caminho está correto
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -16,11 +16,18 @@ const SignUp = () => {
     loading,
     error,
   ] = useCreateUserWithEmailAndPassword(auth);
+  const navigate = useNavigate();  
 
   function handleSignUp(event) {
     event.preventDefault();
     createUserWithEmailAndPassword(email, password);
   }
+
+  useEffect(() => {
+      if (user) {
+        navigate('/');
+      }
+    }, [user, navigate]);
 
   if (loading) {
     return <p>Carregando...</p>;
