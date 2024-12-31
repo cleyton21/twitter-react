@@ -74,6 +74,11 @@ twitter/
 
 O projeto está hospedado no Firebase Hosting e pode ser acessado através do seguinte link: [https://twitter-react-c15b9.firebaseapp.com/](https://twitter-react-c15b9.firebaseapp.com/)
 
+## 📞 Contato
+
+- **Email:** cfernando_21@hotmail.com
+- **Telefone:** (11) 98659-3034
+
 ## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
